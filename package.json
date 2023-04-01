@@ -12,6 +12,7 @@
     "@phosphor-icons/react": "^2.0.6",
     "@resvg/resvg-js": "^2.4.1",
     "@vercel/og": "^0.5.0",
+    "bohr": "^1.0.468",
     "next": "^13.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
