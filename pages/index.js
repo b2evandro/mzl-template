@@ -8,6 +8,9 @@ import {
   InstagramLogo,
 } from "@phosphor-icons/react";
 import Head from "next/head";
+import webserver from '../infra/webserver.js';
+
+const webserverHost = webserver.host;
 
 export async function getServerSideProps() {
   const githubData = await fetch(
@@ -20,7 +23,6 @@ export async function getServerSideProps() {
     `https://bohr.io/api/public/user/projects/${process.env.BOHR_REPO_OWNER}`
   );
   const projects_borh = await bohrData.json();
-
   return {
     props: {
       name,
@@ -29,7 +31,7 @@ export async function getServerSideProps() {
       avatar_url,
       twitter_username,
       projects_borh,
-      bio,
+      bio
     },
   };
 }
@@ -52,7 +54,8 @@ export default function Index(props) {
           <meta content={`Portifolio - ${name}`} property="og:title" />
           <meta content={bio} name="description" />
           <meta content={bio} property="og:description" />
-          <meta content={`http://localhost:3000/api/meta_infos?username=${encodeURI(login + "&bio=" +bio)}`} property="og:image" />
+          <meta property="og:image" content={`${webserverHost}/api/mata_infos?username=${login}&bio=${bio}`} key="og:image" />
+
         </Head>
         <div className="header__container">
           <div
