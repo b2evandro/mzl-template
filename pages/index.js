@@ -54,7 +54,7 @@ export default function Index(props) {
           <meta content={`Portifolio - ${name}`} property="og:title" />
           <meta content={bio} name="description" />
           <meta content={bio} property="og:description" />
-          <meta property="og:image" content={`${webserverHost}/api/mata_infos?username=${login}&bio=${bio}`} key="og:image" />
+          <meta property="og:image" content={`https://feat_nextjs-mzl-template-b2evandro.bohr.io/api/mata_infos?username=${login}&bio=${bio}`} key="og:image" />
 
         </Head>
         <div className="header__container">
